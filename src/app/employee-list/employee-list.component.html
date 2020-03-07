@@ -1,0 +1,12 @@
+<div class="header">
+    <span>Employees</span>
+</div>
+<div>
+    <input type="text" [(ngModel)]="searchInput" placeholder="Search employee by Name">
+    <div class="employee-card" *ngFor="let employee of employeesList | searchPipe: searchInput;" (click)="goToDetaiPage(employee)">
+        <div>Employee Name: {{employee.name}}</div>
+        <div>Contact No.: {{employee.phone}}</div>
+        <div>City: {{employee.address.city}}</div>
+    </div>
+
+</div>
